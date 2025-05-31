@@ -1,0 +1,29 @@
+{
+  "name": "a3_restaurant_tables_reservation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagosampaiog/A3_RESTAURANT_TABLES_RESERVATION.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thiagosampaiog/A3_RESTAURANT_TABLES_RESERVATION/issues"
+  },
+  "homepage": "https://github.com/thiagosampaiog/A3_RESTAURANT_TABLES_RESERVATION#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
