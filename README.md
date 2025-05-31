@@ -42,10 +42,10 @@ Sistema de reservas de mesas para restaurante, com controle de reservas por aten
 
 ## Endpoints principais
 
-- **Criar reserva:**  
+- **Criar reserva (atendente):**  
   `POST /reserva`  
 
-- **Cancelar reserva:**  
+- **Cancelar reserva (atendente:**  
   `DELETE /reserva/:id`
 
 - **Confirmar reserva (garçom):**  
