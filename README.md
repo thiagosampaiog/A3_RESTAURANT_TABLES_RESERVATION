@@ -78,17 +78,5 @@ Sistema de reservas de mesas para restaurante, com controle de reservas por aten
 
 ## Estrutura de pastas
 
-```
-src/
-  controllers/
-    reserva.controller.js
-  database/
-    db.js
-  routes/
-    reservas.js
-  server.js
-public/
-  html/
-  js/
-  css/
-```
+![image](https://github.com/user-attachments/assets/5026ae41-a255-4ba7-bf4f-c4f9672882c7)
+
