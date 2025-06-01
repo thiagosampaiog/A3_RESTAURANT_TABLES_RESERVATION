@@ -1,3 +1,39 @@
+# Relatório do Projeto - Sistema de Reservas de Mesas
+
+## Integrantes
+- Thiago Galdino Sampaio - RA _1272316314
+- Gabriel Silva Miranda - RA _1272310532
+- Eduarda Cruz de Oliveira - RA _12723120160
+- Cauã Yoshito Yamaji Nogueira - RA _12723134391
+- Aurea dos Reis Santos Neta - RA _12723131562
+- Grasielly Conceição dos Santos - RA _1272320812
+---
+
+## Ferramentas Utilizadas
+
+- **Linguagem:** JavaScript (Node.js)
+- **Banco de Dados:** SQLite
+- **Framework:** Express.js
+- **Bibliotecas:** sqlite3, nodemon (dev), path
+- **HTML e CSS**
+
+---
+
+## Justificativa da abordagem de comunicação
+
+Optamos por utilizar uma **API REST** com Express.js, pois:
+- Já estamos acostumados com API Rest.
+- É o mais implementado durante os projetos da A3
+- É simples de implementar e testar.
+- Permite fácil integração com diferentes clientes (web, mobile, etc).
+
+---
+
+## Vídeo de Demonstração
+
+[Link para o vídeo no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
+
+
 # A3_RESTAURANT_TABLES_RESERVATION
 
 Sistema de reservas de mesas para restaurante, com controle de reservas por atendente, confirmação por garçom e relatórios para gerente.
