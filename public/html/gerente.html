@@ -1,0 +1,18 @@
+<h2>Relatório: Reservas por Período</h2>
+<form action="/relatorio/periodo" method="GET">
+  <label>Data Inicial: <input type="date" name="data_inicio" required></label><br>
+  <label>Data Final: <input type="date" name="data_fim" required></label><br>
+  <button type="submit">Buscar</button>
+</form>
+
+<h2>Relatório: Reservas por Mesa</h2>
+<form action="/relatorio/mesa" method="GET">
+  <label>Número da Mesa: <input type="number" name="mesa" required></label><br>
+  <button type="submit">Buscar</button>
+</form>
+
+<h2>Relatório: Mesas Confirmadas por Garçom</h2>
+<form action="/relatorio/garcom" method="GET">
+  <label>Nome do Garçom: <input type="text" name="garcom" required></label><br>
+  <button type="submit">Buscar</button>
+</form>
