@@ -1,4 +1,3 @@
-// Sugestão para public/js/garcom.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const formConfirmar = document.querySelector('form[action="/reserva/confirmar"]');
