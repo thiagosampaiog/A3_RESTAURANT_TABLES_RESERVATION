@@ -1,17 +1,44 @@
-<h2>Criar Reserva</h2>
-<form action="/reserva/criar" method="POST">
-  <label>Data: <input type="date" name="data" required></label><br>
-  <label>Hora: <input type="time" name="hora" required></label><br>
-  <label>Número da Mesa: <input type="number" name="mesa" required></label><br>
-  <label>Quantidade de Pessoas: <input type="number" name="qtd_pessoas" required></label><br>
-  <label>Nome do Responsável: <input type="text" name="responsavel" required></label><br>
-  <button type="submit">Criar Reserva</button>
-</form>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h2>Cancelar Reserva</h2>
-<form action="/reserva/cancelar" method="POST">
-  <label>Número da Mesa: <input type="number" name="mesa" required></label><br>
-  <label>Data: <input type="date" name="data" required></label><br>
-  <label>Hora: <input type="time" name="hora" required></label><br>
-  <button type="submit">Cancelar Reserva</button>
-</form>
+<head>
+  <meta charset="utf-8">
+  <title>Atendente - Criar ou Cancelar Reserva</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <h2>Criar Reserva</h2>
+  <form id="formCriar">
+    <label>Data:
+      <input type="date" name="data" required>
+    </label>
+    <label>Hora:
+      <input type="time" name="hora" required>
+    </label>
+    <label>Número da Mesa:
+      <input type="number" name="mesa" required>
+    </label>
+    <label>Quantidade de Pessoas:
+      <input type="number" name="pessoas" required>
+    </label>
+    <label>Nome do Responsável:
+      <input type="text" name="responsavel" required>
+    </label>
+    <button type="submit">Criar Reserva</button>
+  </form>
+
+  <h2>Cancelar Reserva</h2>
+  <form id="formCancelar">
+    <label>ID da Reserva:
+      <input type="number" name="id" required>
+    </label>
+    <button type="submit">Cancelar Reserva</button>
+  </form>
+
+  <div id="mensagem"></div>
+  <pre id="resultado"></pre>
+  <a href="index.html">Voltar ao Início</a>
+  <script src="../js/atendente.js"></script>
+</body>
+</html>
