@@ -36,3 +36,5 @@ build/
 .idea/
 *.bak
 *.tmp
+
+reservas.db
