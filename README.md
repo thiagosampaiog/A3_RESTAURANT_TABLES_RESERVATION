@@ -14,7 +14,6 @@
 - **Linguagem:** JavaScript (Node.js)
 - **Banco de Dados:** SQLite
 - **Framework:** Express.js
-- **Bibliotecas:** sqlite3, nodemon (dev), path
 - **HTML e CSS**
 
 ---
