@@ -8,51 +8,89 @@ function criarReserva(req, res) {
     const errors = [];
 
     if (!data) errors.push('Campo data não preenchido');
-    if (!hora) errors.push('Campo hora não preenchido');
-    if (!mesa) errors.push('Campo mesa não preenchido');
-    if (!pessoas) errors.push('Campo pessoas não preenchido');
-    if (!responsavel) errors.push('Campo responsavel não preenchido');
 
-    if (errors.length > 0) {
-        return res.status(400).json({ message: errors });
-    }
+    if (data && !/^\d{4}-\d{2}-\d{2}$/.test(data)) {
+        errors.push('Data em formato inválido (use YYYY-MM-DD)');
+    } else if (data) {
+        const dataObj = new Date(data);
+        if (isNaN(dataObj.getTime())) {
+            errors.push('Data inválida');
+        }
 
-    db.get(
-        `
+        if (dataObj.getFullYear() < 2020 || dataObj.getFullYear() > 2100) {
+            errors.push('Ano da data fora do permitido');
+        }
+
+        if (!hora) errors.push('Campo hora não preenchido');
+
+        if (hora && !/^\d{2}:\d{2}$/.test(hora)) {
+            errors.push('Hora em formato inválido (use HH:MM)');
+        }
+
+        if (!mesa) errors.push('Campo mesa não preenchido');
+
+        if (!pessoas) errors.push('Campo pessoas não preenchido');
+
+        if (mesa && (isNaN(mesa) || mesa <= 0)) {
+            errors.push('Número da mesa inválido');
+        }
+
+        if (mesa && mesa > 50) {
+            errors.push('Número da mesa excede o máximo permitido (50)');
+        }
+
+        if (pessoas && (isNaN(pessoas) || pessoas <= 0)) {
+            errors.push('Quantidade de pessoas inválida');
+        }
+
+        if (pessoas && pessoas > 20) {
+            errors.push('Quantidade de pessoas excede o máximo permitido (20)');
+        }
+
+        if (!responsavel) errors.push('Campo responsavel não preenchido');
+
+        if (responsavel && responsavel.length < 2) {
+            errors.push('Nome do responsável muito curto');
+        }
+
+        if (errors.length > 0) {
+            return res.status(400).json({ message: errors });
+        }
+
+        db.get(
+            `
         SELECT * FROM reservas 
         WHERE data = ? 
         AND hora = ? 
         AND mesa = ?
-        AND status = 'pendente'
       `,
-        [data, hora, mesa],
-        (error, coluna) => {
-            if (error) {
-                return res.status(500).json({ message: 'Erro ao acessar o banco de dados.' })
-            }
-            if (coluna) {
-                return res.status(400).json({ message: 'Mesa já confirmada para este horário.' })
-            }
+            [data, hora, mesa],
+            (error, coluna) => {
+                if (error) {
+                    return res.status(500).json({ message: 'Erro ao acessar o banco de dados.' })
+                }
+                if (coluna) {
+                    return res.status(400).json({ message: 'Já existe uma reserva para esta mesa neste horário.' })
+                }
 
-            db.run(
-                `INSERT INTO reservas 
+                db.run(
+                    `INSERT INTO reservas 
                 (data, hora, mesa, pessoas, responsavel, status) 
                 VALUES (?, ?, ?, ?, ?, 'pendente')`,
-                [data, hora, mesa, pessoas, responsavel],
-                function (error) {
-                    if (error) {
-                        return res.status(500).json({ message: 'Erro ao criar reserva.' });
+                    [data, hora, mesa, pessoas, responsavel],
+                    function (error) {
+                        if (error) {
+                            return res.status(500).json({ message: 'Erro ao criar reserva.' });
+                        }
+                        return res.status(201).json({
+                            message: 'Reserva criada com sucesso',
+                            reservaId: this.lastID
+                        });
                     }
-                    return res.status(201).json({
-                        message: 'Reserva criada com sucesso',
-                        reservaId: this.lastID
-                    });
-                }
-            )
-        }
-
-
-    )
+                )
+            }
+        )
+    }
 }
 
 function cancelarReserva(req, res) {
@@ -98,7 +136,7 @@ function confirmarReserva(req, res) {
     const { id } = req.params;
     const { garcom } = req.body;
 
-    if(!garcom) {
+    if (!garcom) {
         return res.status(400).json({ message: 'Garcom não informado.' });
     }
 
