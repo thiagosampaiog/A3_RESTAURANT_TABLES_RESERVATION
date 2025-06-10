@@ -1,25 +1,57 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-  const formConfirmar = document.querySelector('form[action="/reserva/confirmar"]');
+  const formConfirmar = document.getElementById('formConfirmar');
   formConfirmar.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const dados = Object.fromEntries(new FormData(formConfirmar));
-    const resp = await fetch('/reserva/confirmar', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(dados)
+    const id = formConfirmar.id.value;
+    const garcom = formConfirmar.garcom.value;
+    const resp = await fetch(`/reserva/${id}/confirmar`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ garcom })
     });
-    const msg = await resp.text();
-    exibirMensagem(msg);
+    const msg = await resp.json();
+    exibirMensagem(msg.message || msg);
+    exibirResultado(msg);
   });
 
   function exibirMensagem(msg) {
     let div = document.getElementById('mensagem');
-    if (!div) {
-      div = document.createElement('div');
-      div.id = 'mensagem';
-      document.body.appendChild(div);
+    let pre = document.getElementById('resultado');
+    let texto = '';
+
+    if (Array.isArray(msg)) {
+      texto = msg.join(', ');
+    } else if (typeof msg === 'object' && msg !== null && msg.message) {
+      texto = msg.message;
+      if (msg.reservaId) {
+        texto += ` (ID: ${msg.reservaId})`;
+      }
+    } else if (typeof msg === 'string') {
+      texto = msg;
     }
-    div.textContent = msg;
+
+    if (!texto || texto.trim() === '') {
+      div.style.display = 'none';
+      div.textContent = '';
+    } else {
+      div.style.display = '';
+      div.textContent = texto;
+      pre.style.display = 'none';
+      pre.textContent = '';
+    }
+  }
+
+  function exibirResultado(resultado) {
+    const pre = document.getElementById('resultado');
+    const div = document.getElementById('mensagem');
+    if (!resultado || (typeof resultado === 'string' && resultado.trim() === '')) {
+      pre.style.display = 'none';
+      pre.textContent = '';
+    } else {
+      pre.style.display = '';
+      pre.textContent = typeof resultado === 'string' ? resultado : JSON.stringify(resultado, null, 2);
+      div.style.display = 'none';
+      div.textContent = '';
+    }
   }
 });
