@@ -97,8 +97,6 @@ Sistema de reservas de mesas para restaurante, com controle de reservas por aten
 
 ---
 
-# Sistema de Reservas de Mesas - Documentação
-
 ## Funcionalidades
 
 - **Atendente:**  
