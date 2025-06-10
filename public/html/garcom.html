@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"></head>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Confirmar Reserva - Garçom</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
 <body>
-    <h2>Confirmar Reserva</h2>
-<form action="/reserva/confirmar" method="POST">
-  <label>Número da Mesa: <input type="number" name="mesa" required=""></label><br>
-  <label>Data: <input type="date" name="data" required=""></label><br>
-  <label>Hora: <input type="time" name="hora" required=""></label><br>
-  <button type="submit">Confirmar Reserva</button>
-</form>
+  <h2>Confirmar Reserva</h2>
+  <form id="formConfirmar">
+    <label>ID da Reserva:
+      <input type="number" name="id" required>
+    </label>
+    <label>Nome do Garçom:
+      <input type="text" name="garcom" required>
+    </label>
+    <button type="submit">Confirmar Reserva</button>
+  </form>
+ <div id="mensagem"></div>
+<pre id="resultado"></pre>
+<a href="index.html">Voltar ao Início</a>
+  <script src="../js/garcom.js"></script>
 </body>
 </html>
