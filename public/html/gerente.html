@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gerente - Relatórios</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Gerente - Relatórios</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+  <body>
+    <header>
+      <h1>Área do Gerente</h1>
+      <p>Visualize os relatórios de acompanhamento de reservas</p>
+    </header>
 
-<body>
-  <h2>Relatório: Reservas por Período</h2>
-  <form id="formPeriodo">
-    <label>Data Inicial:
-      <input type="date" name="inicio" required>
-    </label>
-    <label>Data Final:
-      <input type="date" name="fim" required>
-    </label>
-    <button type="submit">Buscar</button>
-  </form>
+    <main>
+      <section class="card">
+        <h2>Relatório: Reservas por Período</h2>
+        <form id="formPeriodo">
+          <label
+            >Data Inicial:<br />
+            <input type="date" name="inicio" required /> </label
+          ><br /><br />
 
-  <h2>Relatório: Reservas por Mesa</h2>
-  <form id="formMesa">
-    <label>Número da Mesa:
-      <input type="number" name="mesa" required>
-    </label>
-    <button type="submit">Buscar</button>
-  </form>
+          <label
+            >Data Final:<br />
+            <input type="date" name="fim" required /> </label
+          ><br /><br />
 
-  <h2>Relatório: Mesas Confirmadas por Garçom</h2>
-  <form id="formGarcom">
-    <label>Nome do Garçom:
-      <input type="text" name="garcom" required>
-    </label>
-    <button type="submit">Buscar</button>
-  </form>
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
 
-  <div id="mensagem"></div>
-  <pre id="resultado"></pre>
-  <a href="index.html">Voltar ao Início</a>
-  <script src="../js/gerente.js"></script>
-</body>
+      <section class="card" style="margin-top: 40px">
+        <h2>Relatório: Reservas por Mesa</h2>
+        <form id="formMesa">
+          <label
+            >Número da Mesa:<br />
+            <input type="number" name="mesa" required /> </label
+          ><br /><br />
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
 
+      <section class="card" style="margin-top: 40px">
+        <h2>Relatório: Mesas Confirmadas por Garçom</h2>
+        <form id="formGarcom">
+          <label
+            >Nome do Garçom:<br />
+            <input type="text" name="garcom" required /> </label
+          ><br /><br />
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top: 30px">
+        <div id="mensagem"></div>
+        <pre id="resultado"></pre>
+        <a href="/html/index.html">← Voltar ao Início</a>
+      </section>
+    </main>
+
+    <script src="../js/gerente.js"></script>
+  </body>
 </html>

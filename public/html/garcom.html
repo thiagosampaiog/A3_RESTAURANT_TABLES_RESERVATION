@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <title>Confirmar Reserva - Garçom</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <h2>Confirmar Reserva</h2>
-  <form id="formConfirmar">
-    <label>ID da Reserva:
-      <input type="number" name="id" required>
-    </label>
-    <label>Nome do Garçom:
-      <input type="text" name="garcom" required>
-    </label>
-    <button type="submit">Confirmar Reserva</button>
-  </form>
- <div id="mensagem"></div>
-<pre id="resultado"></pre>
-<a href="index.html">Voltar ao Início</a>
-  <script src="../js/garcom.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Confirmar Reserva - Garçom</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Área do Garçom</h1>
+      <p>Confirme reservas utilizadas pelos clientes</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Confirmar Reserva</h2>
+        <form id="formConfirmar">
+          <label
+            >ID da Reserva:<br />
+            <input type="number" name="id" required /> </label
+          ><br /><br />
+
+          <label
+            >Nome do Garçom:<br />
+            <input type="text" name="garcom" required /> </label
+          ><br /><br />
+
+          <button type="submit">Confirmar Reserva</button>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top: 30px">
+        <div id="mensagem"></div>
+        <pre id="resultado"></pre>
+        <a href="/html/index.html">← Voltar ao Início</a>
+      </section>
+    </main>
+
+    <script src="../js/garcom.js"></script>
+  </body>
 </html>

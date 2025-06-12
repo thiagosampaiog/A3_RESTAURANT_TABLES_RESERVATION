@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Atendente - Criar ou Cancelar Reserva</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Atendente - Criar ou Cancelar Reserva</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+  <body>
+    <header>
+      <h1>Área do Atendente</h1>
+      <p>Crie ou cancele reservas facilmente</p>
+    </header>
 
-<body>
-  <h2>Criar Reserva</h2>
-  <form id="formCriar">
-    <label>Data:
-      <input type="date" name="data" required>
-    </label>
-    <label>Hora:
-      <input type="time" name="hora" required>
-    </label>
-    <label>Número da Mesa:
-      <input type="number" name="mesa" required>
-    </label>
-    <label>Quantidade de Pessoas:
-      <input type="number" name="pessoas" required>
-    </label>
-    <label>Nome do Responsável:
-      <input type="text" name="responsavel" required>
-    </label>
-    <button type="submit">Criar Reserva</button>
-  </form>
+    <main>
+      <section class="card">
+        <h2>Criar Reserva</h2>
+        <form id="formCriar">
+          <label
+            >Data:<br />
+            <input type="date" name="data" required /> </label
+          ><br />
 
-  <h2>Cancelar Reserva</h2>
-  <form id="formCancelar">
-    <label>ID da Reserva:
-      <input type="number" name="id" required>
-    </label>
-    <button type="submit">Cancelar Reserva</button>
-  </form>
+          <label
+            >Hora:<br />
+            <input type="time" name="hora" required /> </label
+          ><br />
 
-  <div id="mensagem"></div>
-  <pre id="resultado"></pre>
-  <a href="index.html">Voltar ao Início</a>
-  <script src="../js/atendente.js"></script>
-</body>
+          <label
+            >Número da Mesa:<br />
+            <input type="number" name="mesa" required /> </label
+          ><br />
+
+          <label
+            >Quantidade de Pessoas:<br />
+            <input type="number" name="pessoas" required /> </label
+          ><br />
+
+          <label
+            >Nome do Responsável:<br />
+            <input type="text" name="responsavel" required /> </label
+          ><br />
+
+          <button type="submit">Criar Reserva</button>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top: 40px">
+        <h2>Cancelar Reserva</h2>
+        <form id="formCancelar">
+          <label
+            >ID da Reserva:<br />
+            <input type="number" name="id" required /> </label
+          ><br />
+          <button type="submit">Cancelar Reserva</button>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top: 40px">
+        <div id="mensagem"></div>
+        <pre id="resultado"></pre>
+        <a href="/html/index.html">← Voltar ao Início</a>
+      </section>
+    </main>
+
+    <script src="../js/atendente.js"></script>
+  </body>
 </html>

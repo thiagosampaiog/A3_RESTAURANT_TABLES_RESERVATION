@@ -1,16 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Sistema de Reservas - Início</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <h1>Sistema de Reservas de Mesas</h1>
-  <ul>
-    <li><a href="/html/atendente.html">Atendente: Criar/Cancelar Reserva</a></li>
-    <li><a href="/html/garcom.html">Garçom: Confirmar Reserva</a></li>
-    <li><a href="/html/gerente.html">Gerente: Relatórios</a></li>
-  </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Reservas de Mesas</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .painel {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .painel-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px 24px;
+        width: 280px;
+        text-align: center;
+        box-shadow: 0 4px 16px var(--shadow);
+        transition: transform 0.2s ease;
+      }
+
+      .painel-card:hover {
+        transform: scale(1.015);
+      }
+
+      .painel-card h2 {
+        color: var(--primary);
+        font-size: 1.4rem;
+        margin: 12px 0 8px;
+      }
+
+      .painel-card p {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        margin-bottom: 18px;
+      }
+
+      .painel-card a {
+        display: inline-block;
+        padding: 12px 0;
+        width: 100%;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .painel-card a:hover {
+        background: var(--primary-light);
+      }
+
+      .painel header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .painel header h1 {
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+
+      .painel header p {
+        font-size: 1rem;
+        color: var(--text-light);
+        margin-top: 6px;
+      }
+
+      @media (max-width: 900px) {
+        .painel {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="painel">
+      <header>
+        <h1>Sistema de Reservas de Mesas</h1>
+        <p>Escolha uma área de acesso abaixo:</p>
+      </header>
+
+      <div class="painel-card">
+        <h2>Atendente</h2>
+        <p>Crie e cancele reservas com facilidade.</p>
+        <a href="/html/atendente.html">Acessar</a>
+      </div>
+
+      <div class="painel-card">
+        <h2>Garçom</h2>
+        <p>Confirme utilização de reservas rapidamente.</p>
+        <a href="/html/garcom.html">Acessar</a>
+      </div>
+
+      <div class="painel-card">
+        <h2>Gerente</h2>
+        <p>Visualize relatórios completos do sistema.</p>
+        <a href="/html/gerente.html">Acessar</a>
+      </div>
+    </div>
+  </body>
 </html>
