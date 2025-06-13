@@ -30,7 +30,7 @@ Optamos por utilizar uma **API REST** com Express.js, pois:
 
 ## Vídeo de Demonstração
 
-[Link para o vídeo no YouTube](COLE_AQUI_O_LINK_DO_VIDEO)
+[Link para o vídeo no YouTube](https://www.youtube.com/watch?v=SsdBzGVPZkg)
 
 
 # A3_RESTAURANT_TABLES_RESERVATION
